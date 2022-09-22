@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+ <br><br><br><br><br><br><br><br><br><br><br>
+
+<ion-content class="ion-padding">
+
+  <form #frm="ngForm" (ngSubmit)="onSubmit()">
+
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input required type="text" name="username" [(ngModel)]="usuario.username" clearInput></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input required type="password" name="password" [(ngModel)]="usuario.password" clearInput></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" shape="round" color="tertiary" type="submit" [disabled]="frm.invalid" class="ion-margin-top">
+      <h4>Ingresar</h4>
+    </ion-button>
+
+    <ion-text class="ion-text-center ion-margin-top">
+      <h6>¿Olvidaste tu Clave?</h6>
+    </ion-text>
+
+    <ion-button routerLink="/recuperarclave" color="tertiary" expand="block" fill="solid" shape="round">
+      <h4>Recuperar mi Clave</h4>
+    </ion-button>
+
+  </form>
+
+</ion-content>
